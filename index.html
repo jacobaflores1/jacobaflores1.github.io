@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>[ADD: Your Name] – Portfolio</title>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+<style>
+  :root { --accent:#500000; --bg:#f7f7f7; --text:#222; }
+  * { box-sizing: border-box; }
+  body { margin:0; font-family: Arial, Helvetica, sans-serif; background:var(--bg); color:var(--text); line-height:1.5; }
+  header { background:var(--accent); color:#fff; padding:2rem 1rem; text-align:center; }
+  header h1 { margin:0 0 .25rem; font-size:1.8rem; }
+  header p { margin:0; font-size:1rem; opacity:.9; }
+  nav { display:flex; flex-wrap:wrap; justify-content:center; gap:1rem; background:#fff; padding:.75rem; position:sticky; top:0; box-shadow:0 1px 4px rgba(0,0,0,.1); }
+  nav a { color:var(--accent); text-decoration:none; font-weight:bold; font-size:.95rem; }
+  section { max-width:800px; margin:0 auto; padding:2rem 1rem; }
+  h2 { color:var(--accent); border-bottom:2px solid var(--accent); padding-bottom:.25rem; }
+  .cards { display:grid; gap:1rem; grid-template-columns:1fr; }
+  @media(min-width:700px){ .cards{ grid-template-columns:1fr 1fr 1fr; } }
+  .card { background:#fff; border:1px solid #ddd; border-radius:8px; padding:1rem; cursor:pointer; transition:box-shadow .2s; }
+  .card:hover { box-shadow:0 2px 8px rgba(0,0,0,.15); }
+  .card h3 { margin-top:0; color:var(--accent); }
+  .details { display:none; margin-top:.75rem; font-size:.95rem; }
+  .details h4 { margin:.5rem 0 .15rem; color:var(--accent); }
+  .card.open .details { display:block; }
+  #map { height:300px; border-radius:8px; margin-top:1rem; }
+  footer { text-align:center; padding:1.5rem; font-size:.85rem; color:#666; }
+  a.contact-link { color:var(--accent); font-weight:bold; }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>[ADD: Your Full Name]</h1>
+  <p>[ADD: one-line headline]</p>
+</header>
+
+<nav>
+  <a href="#about">About</a>
+  <a href="#projects">Projects</a>
+  <a href="#resume">Resume</a>
+  <a href="#contact">Contact</a>
+</nav>
+
+<section id="about">
+  <h2>About</h2>
+  <p>[ADD: your About paragraph]</p>
+</section>
+
+<section id="projects">
+  <h2>Projects</h2>
+  <div class="cards">
+
+    <div class="card" onclick="this.classList.toggle('open')">
+      <h3>Capacity of Bike Racks Across Texas A&amp;M University Campus</h3>
+      <p>Spring 2025</p>
+      <div class="details">
+        <h4>Problem</h4><p>[ADD]</p>
+        <h4>What I did</h4><p>[ADD]</p>
+        <h4>What I found</h4><p>[ADD]</p>
+        <h4>What I would do differently</h4><p>[ADD]</p>
+      </div>
+    </div>
+
+    <div class="card" onclick="this.classList.toggle('open')">
+      <h3>Texas Coastal Hurricane Risk</h3>
+      <p>Fall 2025</p>
+      <div class="details">
+        <h4>Problem</h4><p>[ADD]</p>
+        <h4>What I did</h4><p>[ADD]</p>
+        <h4>What I found</h4><p>[ADD]</p>
+        <h4>What I would do differently</h4><p>[ADD]</p>
+      </div>
+    </div>
+
+    <div class="card" onclick="this.classList.toggle('open')">
+      <h3>U.S. Housing Crisis</h3>
+      <p>Spring 2026</p>
+      <div class="details">
+        <h4>Problem</h4><p>[ADD]</p>
+        <h4>What I did</h4><p>[ADD]</p>
+        <h4>What I found</h4><p>[ADD]</p>
+        <h4>What I would do differently</h4><p>[ADD]</p>
+        <div id="map"></div>
+      </div>
+    </div>
+
+    <!-- Fourth project available if you'd rather swap one in:
+    U.S. Rising Temperatures Thematic Map (Fall 2023) -->
+
+  </div>
+</section>
+
+<section id="resume">
+  <h2>Resume</h2>
+  <h3>Education</h3>
+  <p>Texas A&amp;M University, College Station, Texas — Bachelor of Science in Geographic Information Science and Technology, August 2021 – December 2026 [1]</p>
+  <h3>Tools</h3>
+  <p>Microsoft Office, VS Code, ArcGIS Pro, ArcGIS Online, ArcGIS Field Maps, ArcGIS StoryMaps, MySQL [1]</p>
+  <h3>Languages</h3>
+  <p>Python, Java, C#, R, JavaScript, SQL [1]</p>
+  <p><a class="contact-link" href="[ADD: link to resume file]">Download full resume (PDF)</a></p>
+</section>
+
+<section id="contact">
+  <h2>Contact</h2>
+  <p>Email: <a class="contact-link" href="mailto:[ADD: your email]">[ADD: your email]</a></p>
+</section>
+
+<footer>
+  &copy; [ADD: year] [ADD: Your Name]
+</footer>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script>
+  var map = L.map('map').setView([/*ADD lat*/0, /*ADD lng*/0], 6);
+  L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer/tile/{z}/{y}/{x}', {
+    attribution: 'Tiles © Esri'
+  }).addTo(map);
+
+  // [ADD] replace with your actual county/point data
+  var points = [
+    { lat: /*ADD*/0, lng: /*ADD*/0, label: "[ADD county/point name]", info: "[ADD housing value info]" }
+  ];
+  points.forEach(function(p){
+    L.marker([p.lat, p.lng]).addTo(map).bindPopup("<b>" + p.label + "</b><br>" + p.info);
+  });
+</script>
+
+</body>
+</html>
