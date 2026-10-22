@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Texas Coastal Hurricane Risk – Jacob Flores</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <h1>Jacob Flores</h1>
+  <p>[ADD: one-line headline]</p>
+</header>
+
+<nav>
+  <a href="index.html">Home</a>
+  <a href="about.html">About</a>
+  <a href="projects.html">Projects</a>
+  <a href="resume.html">Resume</a>
+</nav>
+
+<main>
+  <section id="project-2">
+    <h2>Texas Coastal Hurricane Risk</h2>
+    <p><em>Fall 2025</em></p>
+
+    <h3>Problem</h3>
+    <p>[ADD: what problem/question this project addressed]</p>
+
+    <h3>My Role</h3>
+    <p>Provided the leader role & research data sources found through ArcGIS Online, cleaned and filtered data for Texas counties, and created map layers for risk assessment and infrastructure inside of ArcGIS Pro to be used for the geodatabase for our geodatabase part of the project. [1][2]</p>
+
+    <h3>Data &amp; Method</h3>
+    <p>Identified the coastal counties of Texas who are at high risk for flooding, infrastructure capacity, and counties that lack emergency support to find out which counties need the most assistance with hurricane prevention and what could be done to provide extra safety before the next hurricane season arrives towards the state of Texas. [1][2]</p>
+    <p>[ADD: any additional detail on data sources, data cleaning, or method steps not already covered above]</p>
+
+    <h3>Map</h3>
+    <div id="map"></div>
+    <p>[ADD: if you have an ArcGIS Online map link to embed instead, let me know and I'll swap this for an iframe]</p>
+
+    <h3>What I Found</h3>
+    <p>[ADD: your findings/results]</p>
+
+    <h3>What I Would Do Differently</h3>
+    <p>[ADD: your reflection]</p>
+  </section>
+</main>
+
+<footer>
+  <p>Email: <a class="contact-link" href="mailto:jaflores@tamu.edu">[jaflores@tamu.edu]</a></p>
+</footer>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script>
+  var map = L.map('map').setView([/*ADD lat*/0, /*ADD lng*/0], 6);
+  L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer/tile/{z}/{y}/{x}', {
+    attribution: 'Tiles © Esri'
+  }).addTo(map);
+
+  // [ADD] replace with your actual county/point data
+  var points = [
+    { lat: /*ADD*/0, lng: /*ADD*/0, label: "[ADD county name]", info: "[ADD risk info]" }
+  ];
+  points.forEach(function(p){
+    L.marker([p.lat, p.lng]).addTo(map).bindPopup("<b>" + p.label + "</b><br>" + p.info);
+  });
+</script>
+
+</body>
+</html>
