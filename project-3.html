@@ -5,12 +5,13 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Capacity of Bike Racks – Jacob Flores</title>
 <link rel="stylesheet" href="style.css">
+<script type="module" src="https://js.arcgis.com/5.1/embeddable-components/"></script>
 </head>
 <body>
 
 <header>
-  <h1>Jacob Flores</h1>
-  <p>[ADD: one-line headline]</p>
+  <h1>Texas A&M Bike Racks</h1>
+  <p><br></p>
 </header>
 
 <nav>
@@ -26,46 +27,31 @@
     <p><em>Spring 2025</em></p>
 
     <h3>Problem</h3>
-    <p>[ADD: what problem/question this project addressed]</p>
+    <p>The bike racks at Texas A&M University have seen areas in where the bike racks were overcrowded. The key investigation was to search for the locations that were the most crowded and the least crowded by using ArcGIS Field Maps for real-world locations. </p>
 
     <h3>My Role</h3>
-    <p>Recorded bike rack data from North Campus of Texas A&amp;M University at day & night using the ArcGIS Field Maps App with accuracy coordinates using real GPS coordinates plus wrote the Methods portion of the project poster explaining the process of data collection and data sharing. </p>
+    <p>Recorded bike rack data from North Campus of Texas A&amp;M University at day & night using the ArcGIS Field Maps App with accuracy coordinates using real GPS coordinates plus wrote the Methods portion of the project poster explaining the process of data collection and data sharing.</p>
 
     <h3>Data &amp; Method</h3>
-    <p>Investigated bike racks across different parts of the Texas A&amp;M campus to find bike racks that were overcrowded and least crowded using combined group data across all parts of the Texas A&amp;M University campuses including the North, Central, West, and the apartments. </p>
-    <p>[ADD: any additional detail on data sources, data cleaning, or method steps not already covered above]</p>
+    <p>Investigated bike racks across different parts of the Texas A&amp;M campus to find bike racks that were overcrowded and least crowded using combined group data across all parts of the Texas A&amp;M University campuses including the North, Central, West, and the apartments.</p>
+    <p>Using the combined data recorded through ArcGIS Field Maps, we created a map to include all the bike rack locations as well as the capacity of the bike racks from day & night. Here's my recorded points below: </p>
 
     <h3>Map</h3>
-    <div id="map"></div>
-    <p>[ADD: if you have an ArcGIS Online map link to embed instead, let me know and I'll swap this for an iframe]</p>
+    <arcgis-embedded-map style="height:600px;width:100%;max-width:700px;" item-id="afcf9ecaf040447dad85ff2d31e6cb3c" theme="light" time-zone-label-enabled center="-95.0016999999984,39.99023571520665" scale="147914381.897889" portal-url="https://tamu.maps.arcgis.com"></arcgis-embedded-map>
 
     <h3>What I Found</h3>
-    <p>[ADD: your findings/results]</p>
+    <p>Data found that many bike racks that were full in the nighttime were areas which students lived as well as the students may travel on bikes during the day which explains the emptier bike racks in the daytime. Bike racks across Raymond Stotzer Parkway located north of campus and University Drive were mostly empty which we inferred that many students found different types of transportation like cars and buses to get over to these parts of campus.
+</p>
 
     <h3>What I Would Do Differently</h3>
-    <p>[ADD: your reflection]</p>
+    <p>Although we recorded the locations at day & night, the results may differ from every other day due to our scheduling conflicts with classes.</p>
+    <p>For more accuracy with the data, I would want to try and get a week's results of the bike racks to improve the quality of the data.</p>
   </section>
 </main>
 
 <footer>
   <p>Email: <a class="contact-link" href="mailto:jaflores@tamu.edu">[jaflores@tamu.edu]</a></p>
 </footer>
-
-<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-<script>
-  var map = L.map('map').setView([/*ADD lat*/0, /*ADD lng*/0], 15);
-  L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer/tile/{z}/{y}/{x}', {
-    attribution: 'Tiles © Esri'
-  }).addTo(map);
-
-  // [ADD] replace with your actual bike rack point data (North Campus coordinates)
-  var points = [
-    { lat: /*ADD*/0, lng: /*ADD*/0, label: "[ADD rack location]", info: "[ADD capacity info]" }
-  ];
-  points.forEach(function(p){
-    L.marker([p.lat, p.lng]).addTo(map).bindPopup("<b>" + p.label + "</b><br>" + p.info);
-  });
-</script>
-
+  
 </body>
 </html>
