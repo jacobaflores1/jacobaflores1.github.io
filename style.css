@@ -59,10 +59,7 @@ nav a {
   color: #fff;
   text-decoration: none;
   font-weight: bold;
-  font-size: .95rem;
-  border: 1px solid var(--border);
-  padding: .4rem .8rem;            
-  border-radius: 4px;  
+  font-size: .95rem; 
 }
 nav a:hover { color: var(--accent); }
 
