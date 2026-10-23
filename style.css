@@ -17,11 +17,10 @@ body {
   line-height: 1.5;
 }
 
-/* Hero header with background image */
 header {
-  background: #000 url('hero.jpg') center/cover no-repeat;
+  background: linear-gradient(rgba(0,0,0,.55), rgba(0,0,0,.55)), url('your-gis-image.jpg') center/cover no-repeat;
   color: #fff;
-  padding: 6rem 1rem 4rem;
+  padding: 4rem 1rem;
   text-align: center;
 }
 header h1 {
