@@ -41,12 +41,18 @@ nav {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  gap: 1rem;
   align-items: center;
   background: transparent;
-  padding: 1rem 2rem;
+  padding: .75rem;
   position: sticky;
   top: 0;
+  box-shadow: 0 1px 4px rgba(0,0,0,.1);
   z-index: 10;
+  transition: transform .3s ease-in-out; /* new: smooth slide */
+}
+nav.nav-hidden {
+  transform: translateY(-100%); /* new: slides nav off-screen upward */
 }
 nav a {
   color: #fff;
