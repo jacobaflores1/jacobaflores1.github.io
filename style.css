@@ -18,7 +18,7 @@ body {
 }
 
 header {
-  background: linear-gradient(rgba(0,0,0,.55), rgba(0,0,0,.55)), url('your-gis-image.jpg') center/cover no-repeat;
+  background: linear-gradient(rgba(0,0,0,.55), rgba(0,0,0,.55)), url('hero.jpg') center/cover no-repeat;
   color: #fff;
   padding: 4rem 1rem;
   text-align: center;
