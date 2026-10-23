@@ -49,6 +49,7 @@ nav {
   top: 0;
   box-shadow: 0 1px 4px rgba(0,0,0,.1);
   z-index: 10;
+  border: 1px solid var(--border);
   transition: transform .3s ease-in-out; /* new: smooth slide */
 }
 nav.nav-hidden {
@@ -59,6 +60,9 @@ nav a {
   text-decoration: none;
   font-weight: bold;
   font-size: .95rem;
+  border: 1px solid var(--border);
+  padding: .4rem .8rem;            
+  border-radius: 4px;  
 }
 nav a:hover { color: var(--accent); }
 
