@@ -96,7 +96,7 @@ h3 { color: var(--accent); margin-top: 1.5rem; }
   transition: box-shadow .2s, transform .2s;
 }
 .card:hover {
-  background-color: #f0f7ff;
+  background-color: #D3D3D3
   border-color: #0066ff;
   box-shadow: 0 2px 12px rgba(0,0,0,.4);
   transform: translateY(-3px);
